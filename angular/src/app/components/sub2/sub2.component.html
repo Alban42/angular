@@ -1,0 +1,43 @@
+<input #name />
+<input type="number" #price />
+<input type="checkbox" #soldout />
+
+<button (click)="addProduct(name.value, price.value, soldout.checked)">Add product</button>
+
+<!-- Condition IF-->
+<p *ngIf="productService.getLength() !== 0">
+  Products number {{productService.getLength()}}
+</p>
+
+<div *ngIf="productService.getLength() === 0">
+  You don't have any products yet
+</div>
+
+<input type="number" #priceFilter/>
+<button (click)="goFilter(priceFilter.value)">Filter</button>
+
+<ul *ngIf="productService.getLength() !== 0">
+  <!-- Boucle for -->
+  <!-- Utilisation du pipe filterByPrice /!\ tant que la variable amount n'est pas modifiée, le pipe ne sera pas réévalué. d-->
+    <li *ngFor="let product of productService.getAllProducts() | filterByPrice:amount">
+      <!-- On conditionne l'application du style 'soldout-div' 
+        en fonction de la valeur du product.soldout 
+        (ça peut être une méthode qui retourne un boolean) -->
+      <div [ngClass]="{'soldout-div':product.soldout}">
+        {{product.name}} : {{product.price}}€ <br/>
+        <!-- Attention, dans le cas du pipe, les données ne seront pas actualisées en direct -->
+        {{product | productPipe}} <br/>
+        <!-- Permet d'afficher l'objet en format json -->
+        {{product | json}}
+        <button (click)="product.toggleSoldOut()">Sold Out!</button>
+      </div>
+    </li>    
+</ul>
+
+<div [ngSwitch]="productService.getLength()">
+    <div *ngSwitchCase="0">You don't have any products yet</div>
+    <div *ngSwitchCase="1">You have one product</div>
+    <div *ngSwitchDefault>Products number {{productService.getLength()}}</div>
+</div>
+
+<div appBig [size]="100" style="font-size:10px">Ma directive</div>

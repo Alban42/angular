@@ -1,0 +1,9 @@
+<form (ngSubmit)="submit()" #productForm="ngForm">
+  <div>
+    <label>Name</label><input name="name" [(ngModel)]="product.name" required minlength="3"/>
+  </div>
+  <div>
+    <label>Price</label><input name="price" type="number" [(ngModel)]="product.price" required/>
+  </div>
+  <button [disabled]="productForm.invalid" type="submit">Add product</button>
+</form>

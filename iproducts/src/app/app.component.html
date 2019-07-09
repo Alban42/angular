@@ -1,0 +1,24 @@
+<header>
+  <ul>
+    <li><a href="" routerLink="/home" routerLinkActive="selected-menu">Home</a></li>
+    <li><a href="" routerLink="/products" routerLinkActive="selected-menu">Products</a></li>
+    <li><a href="" routerLink="/users" routerLinkActive="selected-menu">Users</a></li>
+    <li><a href="" routerLink="/peruserproducts" routerLinkActive="selected-menu">PerUserProducts</a></li>
+    <li><a href="" routerLink="/admin/administrator" routerLinkActive="selected-menu">Admin</a></li>
+    <li><a href="" routerLink="/login" routerLinkActive="selected-menu">Login</a></li>
+    <li class='white' >{{currentRoute}}</li>
+  </ul>
+</header>
+
+<!-- The content below is only a placeholder and can be replaced. -->
+<div style="text-align:center">
+  <!--
+    <app-products></app-products>
+    <app-users></app-users>
+  -->
+
+  <!--
+    Permet de rajouter la gestion des routes dans l'application (associé à routingComponent)
+  -->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,12 @@
+<!-- formGroup est une directive ajoutée au form via la librairie "ReactiveForm"-->
+<form (ngSubmit)="submit()" [formGroup]="userForm">
+  <div>
+    <label>Name</label><input name="name" formControlName="name" required/>
+  </div>
+  <div>
+    <label>Birthdate</label><input type="date" name="birthdate" formControlName="birthdate" required/>
+    <!-- Test de la valeur, -->
+    <div *ngIf="birthdateCtrl.dirty && birthdateCtrl.hasError('tooYoung')">Too young !</div>
+  </div>
+  <button type="submit">Add user</button>
+</form>

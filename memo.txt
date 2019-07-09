@@ -1,0 +1,109 @@
+﻿https://github.com/fromnowhereuser/iproducts
+
+// WebSocket
+
+// Angular best practice : 
+https://angular.io/guide/styleguide
+
+// Faire le tuto 
+https://angular.io/tutorial
+
+// https://developer.mozilla.org/fr/
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+// Aller voir Jhipster -> génère un projet java avec un front JS et tous les connecteurs.
+
+// Visual studio Code -> extention john papa. angular essentials
+
+// https://jsonplaceholder.typicode.com/ 
+// Permet d'appeler des API rest public pour faire des tests.
+
+// https://valor-software.com/ngx-bootstrap/#/
+
+// Commandes :
+Transpilation -> transformer du TypeScript en Javascript
+tsc --init -> initialisation du fichier json qui permet la transpilation 
+tsc        -> Lancer la transpilation
+tsc -w     -> Lancer la transpilation en automatique (à chaque sauvegarde) le w = watch models/Product
+
+// Création d'un nouveau projet Angular
+ng new [nomProjet]
+
+npm install -g nodemon
+nodemon    -> Permet d'exécuter un .ts et de le relancer s'il est modifié.
+
+Dans le package.json, on a toutes les infos sur les versions et les commandes "start, build, test..."
+pour changer le port de l'application, rajouter "ng serve --port 5000"
+
+// Démarrer l'application Angular
+npm start // start correspond à la commande qui se trouve dans package.json
+
+// Pour installer les modules.
+npm i 
+
+// Ajouter les services worker
+ng add @angular/pwa --project iproducts
+
+// Créer le build de l'application 
+ng build --prod
+-> un dossier dist/ avec l'application web sera généré.
+-> en se placant dans le dosier /dist/iproducts et en fasant un http-server permet de lancer un serveur web
+npm -g install http-server // pour l'installer.
+
+
+// Interfaces / Class / Arrow functions en TYPESCRIPT
+
+interface Movable {
+    run(meter : number) : void;
+}
+
+class Car implements Movable {
+    run(meter: number): void {
+        throw new Error("Method not implemented.");
+    }
+}
+
+let car : Movable = {
+    run : (meters : number) => console.log(`Car runs ${meters}`)
+};
+
+car.run(12);
+
+
+Angular : 
+Binding de propriété : [] -> <p [textContent] = "message"></p> == <p>{{message}}</p>
+Binding d'evenement : () -> <button (click) ="clickHandler()">click me </button>
+
+// Création d'un nouveau composant
+ng g c components/sub
+g -> generate
+c -> component
+
+// Création d'une nouvelle classe
+ng g class models/Product
+
+// Création d'un service
+ng g s services/product
+
+// Création d'un pipe : 
+ng g p pipes/product
+
+// Création d'un guard : 
+ng g g guard/loggedIn
+
+// Création d'un resolver : il s'agit en fait un service qui implémente l'interface Resolve<T>
+ng g s resolvers/UserResovler
+
+// Pour ajouter la gestion des formulaires, ajouter dans app.modules.ts : 
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+// Voir les Promise en javascript -> Asynchronisme, indique qu'on aura une réponse mais pas tout de suite.
+resolve et reject sont des fonctions
+new Promise((resolve, reject) => {
+	...
+	resolve(result);
+}
+
+// Observer/Observable : permet de gérer les flux de données.

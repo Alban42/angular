@@ -1,0 +1,32 @@
+
+<!-- <div>
+  Name : <input #name type="text"/> <br/>
+  Price : <input #price type="number"/> <br/>
+  <button (click)="productsService.addProductByNameAndPrice(name.value, price.value)">Add Product</button>
+</div> -->
+
+<!-- On utilise le @Output de product-form-component.ts  -->
+<div *ngIf='!productsByUser'>
+  <app-product-form (result)="productsService.addProduct($event)"></app-product-form>
+
+  <app-user-form></app-user-form>
+
+  <div *ngFor="let product of productsService.getAllProducts()">
+    <ul>
+      <!-- $event correspond à l'élément qui est envoyé par l'enfant, dans notre cas le product -->
+      <li><app-product [product]="product" (select)="showCurrentProduct($event)">
+        <p>Coucou</p>
+      </app-product></li>
+    </ul>
+  </div>
+
+  <h2 *ngIf='currentProduct'> Current selected product : {{currentProduct.name}}</h2>
+</div>
+
+<!-- Si on vient du résolver, alors on affiche cette partie -->
+<div *ngIf='productsByUser'>
+  <h1>Liste des produits de {{currentUser}}</h1>
+  <div *ngFor="let product of productsByUser">
+    <app-product [product]="product"></app-product>
+  </div>
+</div>

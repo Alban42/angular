@@ -1,0 +1,12 @@
+<div>
+  <!-- le # permet de déclarer une variable pour l'input-->
+  <input type="color" #monInput />
+  <!-- On peut donc passer la variable en paramètre de l'event "click" -->
+  <button (click)="clickHandler(monInput.value)">handle</button>
+
+  <div [style.backgroundColor]="color">
+    Couleur : {{color}}<br/>
+    Mon test bla bla bla
+  </div>
+
+</div>

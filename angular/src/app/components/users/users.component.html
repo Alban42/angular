@@ -1,0 +1,33 @@
+
+<!-- Premier exemple sans passer par le resolve du routing-->
+<!--
+<h1>Par pipe async</h1>
+<div *ngFor="let user of users | async">
+  <ul>
+    <li>{{user.name}}</li>
+  </ul>
+</div>
+
+<h1>Par subsciber</h1>
+
+<div *ngFor="let user of userBySub">
+  <ul>
+    <li>{{user.name}}</li>
+  </ul>
+</div>
+
+<h1>Par promise</h1>
+
+<div *ngFor="let user of userByPromise">
+  <ul>
+    <li>{{user.name}}</li>
+  </ul>
+</div> -->
+
+<!-- Deuxième exemple en passant par le resolve du routing-->
+<h1>Par le resolve du routing</h1>
+<div *ngFor="let user of users">
+  <ul>
+    <li>{{user.name}}</li>
+  </ul>
+</div>

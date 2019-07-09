@@ -1,0 +1,9 @@
+<div [ngClass]="{'soldout-div':product.soldOut}">
+  <!-- Permet d'afficher l'objet en format json -->
+  name: {{product.name}}, price: {{product.price}}
+  <button (click)="product.toggleSoldOut()">Sold Out!</button>
+  <button (click)="productSelected()">Select</button>
+
+  <!-- Permet d'afficher ici le contenu de la balise <app-product> dans le parent -->
+  <ng-content></ng-content>
+</div>
