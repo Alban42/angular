@@ -1,0 +1,7 @@
+= Formation Angular 2022
+
+Convention over configuration
+-> Respecter les conventions nous permet d'éviter les erreurs 
+
+Pour ce faire, on utilise angular cli (ng).
+
