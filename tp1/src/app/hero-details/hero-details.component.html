@@ -1,26 +1,14 @@
 <div *ngIf="hero">
   <h2>{{ hero.name | uppercase }} Details</h2>
-  <!-- Utilisation d'une directive (https://angular.io/guide/attribute-directives) -->
-  <div [appHighlight]="hero.bio.length > 0" [color]="'red'">
-    <span>id: </span>{{ hero.id }}
-  </div>
-  <div [appHighlight]="true" [color]="'yellow'">
-    <span>name: </span><input id="name" [(ngModel)]="hero.name" placeholder="name" />
-  </div>
-
-  <!-- Utilisation du pipe date -->
-  <div><span>birthdate: </span>{{ hero.birthdate | date: "dd/MM/yyyy" }}</div>
-
-  <!-- Bio -->
-  <textarea
-    [maxlength]="maxBioLength"
-    id="bio"
-    [(ngModel)]="hero.bio"
-    placeholder="bio"></textarea>
-  <div>
-    <span>Nombre de caractères: {{ hero.bio.length }}/{{ maxBioLength }}</span>
-  </div>
-  <div *ngIf="hero.bio.length >= maxBioLength - 5" style="color: red">
-    Attention, ça va trancher chérie!
-  </div>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div><span>name: </span>{{ hero.name }}</div>
+  <div><span>username: </span>{{ hero.username }}</div>
+  <div><span>email: </span>{{ hero.email }}</div>
+  <div><span>phone: </span>{{ hero.phone }}</div>
+  <div><span>website: </span>{{ hero.website }}</div>
+  <h3>Adress:</h3>
+  <div><span>street: </span>{{ hero.address.street }}</div>
+  <div><span>suite: </span>{{ hero.address.suite }}</div>
+  <div><span>city: </span>{{ hero.address.city }}</div>
+  <div><span>zipcode: </span>{{ hero.address.zipcode }}</div>
 </div>
