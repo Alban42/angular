@@ -1,14 +1,15 @@
 <!-- Plus d'infos sur les pipes : https://angular.io/guide/pipes -->
-<h2>{{hero.name | uppercase}} Details</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <button
+      type="button"
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero"
+    >
+      <span class="badge">{{ hero.id }}</span>
+      <span class="name">{{ hero.name | uppercase }}</span>
+    </button>
+  </li>
+</ul>
 
-<!-- Utilisation d'une directive (https://angular.io/guide/attribute-directives) -->
-<div [appHighlight]="hero.bio.length > 0" [color]="'red'"><span>id: </span>{{hero.id}}</div>
-<div><span>name: </span><input id="name" [(ngModel)]="hero.name" placeholder="name"></div>
-
-<!-- Utilisation du pipe date -->
-<div><span>birthdate: </span>{{hero.birthdate | date: 'dd/MM/yyyy' }}</div>
-
-<!-- Bio -->
-<textarea [maxlength]="maxBioLength" id="bio" [(ngModel)]="hero.bio" placeholder="bio"></textarea>
-<div><span>Nombre de caractères: {{hero.bio.length}}/{{maxBioLength}}</span></div>
-<div *ngIf='hero.bio.length >= (maxBioLength - 5)' style="color: red;"> Attention, ça va trancher chérie!</div>
+<app-hero-details [hero]="selectedHero"></app-hero-details>
