@@ -5,3 +5,8 @@ Convention over configuration
 
 Pour ce faire, on utilise angular cli (ng).
 
+== Liens utiles
+
+https://refactoring.guru/fr/design-patterns/catalog : Explication des designs patterns
+https://flukeout.github.io/ : jeu pour apprendre le CSS
+https://jsonplaceholder.typicode.com/: mock d'api REST

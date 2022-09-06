@@ -1,0 +1,22 @@
+<!-- <mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+</mat-form-field> -->
+<input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+
+<mat-accordion *ngFor="let post of posts">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ post?.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Post id : {{ post?.id }} from user id {{ post?.userId }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ post?.body }}</p>
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="selectPost(post.id)">Go to post</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
