@@ -22,6 +22,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { GetUserPipe } from './get-user.pipe';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostsComponent } from './posts/posts.component';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PostsComponent } from './posts/posts.component';
     PostsComponent,
     PostDetailComponent,
     GetUserPipe,
+    FormulaireComponent,
   ],
   imports: [
     BrowserModule,

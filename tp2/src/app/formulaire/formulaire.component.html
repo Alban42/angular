@@ -1,0 +1,26 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label for="user-name">UserName: </label>
+  <input id="user-name" type="text" formControlName="userName" required>
+  {{userForm.get('userName')?.errors | json}}
+
+  <label for="email">E-Mail: </label>
+  <input id="email" type="text" formControlName="email" required>
+  {{userForm.get('email')?.errors | json}}
+
+  <label for="password">Password: </label>
+  <input id="password" type="password" formControlName="password" required>
+  {{userForm.get('password')?.errors | json}}
+
+  <label for="confirm-password">Confirm Password: </label>
+  <input id="confirm-password" type="password" formControlName="confirmPassword" required>
+  {{userForm.get('confirmPassword')?.errors | json}}
+
+  <p>Complete the form to enable button.</p>
+  <p>Form Status: {{ userForm.status }}</p>
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
+
+<p>Ex<br/>
+email : alban@gmail.com <br/>
+password : Azerty123456@
+</p>
