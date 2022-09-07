@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   postsUrl: 'https://jsonplaceholder.typicode.com/posts',
   commentsUrl: 'https://jsonplaceholder.typicode.com/comments',
+  usersUrl: 'https://jsonplaceholder.typicode.com/users',
 };
 
 /*
